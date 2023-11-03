@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+
+      body {
+        position: relative;
+        background-image: url(NEWONE.jpg);
+        background-size: cover;
+      }
+
+      .container {
+        zoom: 47%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        width: 650px;
+        left: 50%;
+        transform: translate(-50%);
+      }
+
+      .midrow {
+        position: relative;
+        border: solid;
+        border-top: solid;
+        border-bottom: solid;
+        width: 170px;
+        height: 1260px;
+      }
+
+      .rrow {
+        position: relative;
+        border: solid;
+        width: 240px;
+        height: 1260px;
+        border-right: none;
+      }
+
+      .lrow {
+        position: relative;
+        border: solid;
+        width: 240px;
+        height: 1260px;
+        border-left: none;
+      }
+
+      .windows {
+        width: 100%;
+        height: 210px;
+        background-color: #d07f86;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .raft {
+        background-color: #693929;
+        width: 100%;
+        height: 7%;
+      }
+      .rwind {
+        position: absolute;
+        width: 45%;
+        left: 5%;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 80%;
+        border: solid rgb(109, 109, 236);
+        background-image: linear-gradient(to left, #9bd0e7, #b3e3f9);
+        transition: 0.5s;
+        transform-origin: 0% 0%;
+      }
+
+      .lwind {
+        position: absolute;
+        width: 45%;
+        right: 5%;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 80%;
+        border: solid rgb(94, 94, 245);
+        background-image: linear-gradient(to left, #b3e3f9, #9bd0e7);
+        background-color: rgb(109, 109, 236);
+        transition: 0.5s;
+        transform-origin: 100% 100%;
+      }
+
+      .window {
+        position: relative;
+        height: 45%;
+        width: 50%;
+        background-color: #d07f86;
+      }
+
+      .midrow {
+        background-color: #d07f86;
+      }
+
+      .midrows {
+        height: 210px;
+      }
+
+      .midrows .window {
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 70%;
+        height: 50%;
+      }
+
+      .door {
+        position: absolute;
+        border: solid;
+        height: 12%;
+        width: 60%;
+        bottom: 0.5%;
+        left: 50%;
+        transform: translate(-50%);
+        background-image: linear-gradient(to top, #845249, #a86e64);
+        transition: 0.5s;
+        transform-origin: 0% 0%;
+      }
+
+      .window.active {
+        position: fixed;
+        width: 106vw;
+        height: 213vh;
+        z-index: 5;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .window.active .lwind {
+        transform: rotateY(-140deg) translateY(-50%);
+        z-index: 5;
+        height: 212vh;
+        width: 76vw;
+      }
+
+      .window.active .rwind {
+        transform: rotateY(140deg) translateY(-50%);
+        z-index: 5;
+        height: 212vh;
+        width: 76vw;
+      }
+
+      .door:hover {
+        transform: rotateY(140deg);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="rrow">
+        <div class="windows">
+          <div class="raft"></div>
+          <div class="window" id="window">
+            <div class="rwind"></div>
+            <div class="lwind"></div>
+          </div>
+          <div class="window" id="window">
+            <div class="rwind"></div>
+            <div class="lwind"></div>
+          </div>
+          <div class="window" id="window">
+            <div class="rwind"></div>
+            <div class="lwind"></div>
+          </div>
+          <div class="window" id="window">
+            <div class="rwind"></div>
+            <div class="lwind"></div>
+          </div>
+        </div>
+        <div class="windows">
+          <div class="raft"></div>
+          <div class="window" id="window">
+            <div class="rwind"></div>
+            <div class="lwind"></div>
+          </div>
+          <div class="window" id="window">
+            <div class="rwind"></div>
+            <div class="lwind"></div>
+          </div>
+          <div class="window" id="window">
+            <div class="rwind"></div>
+            <div class="lwind"></div>
+          </div>
+          <div class="window" id="window">
+            <div class="rwind"></div>
+            <div class="lwind"></div>
+          </div>
+        </div>
+        <div class="windows">
+          <div class="raft"></div>
+          <div class="window" id="window">
+            <div class="rwind"></div>
+            <div class="lwind"></div>
+          </div>
+          <div class="window" id="window">
+            <div class="rwind"></div>
+            <div class="lwind"></div>
+          </div>
+          <div class="window" id="window">
+            <div class="rwind"></div>
+            <div class="lwind"></div>
+          </div>
+          <div class="window" id="window">
+            <div class="rwind"></div>
+            <div class="lwind"></div>
+          </div>
+        </div>
+        <div class="windows">
+          <div class="raft"></div>
+          <div class="window" id="window">
+            <div class="rwind"></div>
+            <div class="lwind"></div>
+          </div>
+          <div class="window" id="window">
+            <div class="rwind"></div>
+            <div class="lwind"></div>
+          </div>
+          <div class="window" id="window">
+            <div class="rwind"></div>
+            <div class="lwind"></div>
+          </div>
+          <div class="window" id="window">
+            <div class="rwind"></div>
+            <div class="lwind"></div>
+          </div>
+        </div>
+        <div class="windows">
+          <div class="raft"></div>
+          <div class="window" id="window">
+            <div class="rwind"></div>
+            <div class="lwind"></div>
+          </div>
+          <div class="window" id="window">
+            <div class="rwind"></div>
+            <div class="lwind"></div>
+          </div>
+          <div class="window" id="window">
+            <div class="rwind"></div>
+            <div class="lwind"></div>
+          </div>
+          <div class="window" id="window">
+            <div class="rwind"></div>
+            <div class="lwind"></div>
+          </div>
+        </div>
+        <div class="windows">
+          <div class="raft"></div>
+          <div class="window" id="window">
+            <div class="rwind"></div>
+            <div class="lwind"></div>
+          </div>
+          <div class="window" id="window">
+            <div class="rwind"></div>
+            <div class="lwind"></div>
+          </div>
+          <div class="window" id="window">
+            <div class="rwind"></div>
+            <div class="lwind"></div>
+          </div>
+          <div class="window" id="window">
+            <div class="rwind"></div>
+            <div class="lwind"></div>
+          </div>
+        </div>
+      </div>
+      <div class="midrow">
+        <div class="midrows">
+          <div class="raft"></div>
+          <div class="window" id="window">
+            <img
+              src="Elephant.png"
+              alt=""
+              width="100%"
+              height="100%"
+              style="position: absolute"
+            />
+            <div class="rwind"></div>
+            <div class="lwind"></div>
+          </div>
+        </div>
+        <div class="midrows">
+          <div class="raft"></div>
+          <div class="window" id="window">
+            <img
+              src="Lion.png"
+              alt=""
+              width="100%"
+              height="100%"
+              style="position: absolute"
+            />
+            <div class="rwind"></div>
+            <div class="lwind"></div>
+          </div>
+        </div>
+        <div class="midrows">
+          <div class="raft"></div>
+          <div class="window" id="window">
+            <img
+              src="Pig.png"
+              alt=""
+              width="100%"
+              height="100%"
+              style="position: absolute"
+            />
+            <div class="rwind"></div>
+            <div class="lwind"></div>
+          </div>
+        </div>
+        <div class="midrows">
+          <div class="raft"></div>
+          <div class="window" id="window">
+            <img
+              src="Chick.png"
+              alt=""
+              width="100%"
+              height="100%"
+              style="position: absolute"
+            />
+            <div class="rwind"></div>
+            <div class="lwind"></div>
+          </div>
+        </div>
+        <div class="midrows">
+          <div class="raft"></div>
+          <div class="window" id="window">
+            <img
+              src="Sheep.png"
+              alt=""
+              width="100%"
+              height="100%"
+              style="position: absolute"
+            />
+            <div class="rwind"></div>
+            <div class="lwind"></div>
+          </div>
+        </div>
+        <div class="midrows">
+          <div class="raft"></div>
+          <div class="door"></div>
+        </div>
+      </div>
+      <div class="lrow">
+        <div class="windows">
+          <div class="raft"></div>
+          <div class="window" id="window">
+            <div class="rwind"></div>
+            <div class="lwind"></div>
+          </div>
+          <div class="window" id="window">
+            <div class="rwind"></div>
+            <div class="lwind"></div>
+          </div>
+          <div class="window" id="window">
+            <div class="rwind"></div>
+            <div class="lwind"></div>
+          </div>
+          <div class="window" id="window">
+            <div class="rwind"></div>
+            <div class="lwind"></div>
+          </div>
+        </div>
+        <div class="windows">
+          <div class="raft"></div>
+          <div class="window" id="window">
+            <div class="rwind"></div>
+            <div class="lwind"></div>
+          </div>
+          <div class="window" id="window">
+            <div class="rwind"></div>
+            <div class="lwind"></div>
+          </div>
+          <div class="window" id="window">
+            <div class="rwind"></div>
+            <div class="lwind"></div>
+          </div>
+          <div class="window" id="window">
+            <div class="rwind"></div>
+            <div class="lwind"></div>
+          </div>
+        </div>
+        <div class="windows">
+          <div class="raft"></div>
+          <div class="window" id="window">
+            <div class="rwind"></div>
+            <div class="lwind"></div>
+          </div>
+          <div class="window" id="window">
+            <div class="rwind"></div>
+            <div class="lwind"></div>
+          </div>
+          <div class="window" id="window">
+            <div class="rwind"></div>
+            <div class="lwind"></div>
+          </div>
+          <div class="window" id="window">
+            <div class="rwind"></div>
+            <div class="lwind"></div>
+          </div>
+        </div>
+        <div class="windows">
+          <div class="raft"></div>
+          <div class="window" id="window">
+            <div class="rwind"></div>
+            <div class="lwind"></div>
+          </div>
+          <div class="window" id="window">
+            <div class="rwind"></div>
+            <div class="lwind"></div>
+          </div>
+          <div class="window" id="window">
+            <div class="rwind"></div>
+            <div class="lwind"></div>
+          </div>
+          <div class="window" id="window">
+            <div class="rwind"></div>
+            <div class="lwind"></div>
+          </div>
+        </div>
+        <div class="windows">
+          <div class="raft"></div>
+          <div class="window" id="window">
+            <div class="rwind"></div>
+            <div class="lwind"></div>
+          </div>
+          <div class="window" id="window">
+            <div class="rwind"></div>
+            <div class="lwind"></div>
+          </div>
+          <div class="window" id="window">
+            <div class="rwind"></div>
+            <div class="lwind"></div>
+          </div>
+          <div class="window" id="window">
+            <div class="rwind"></div>
+            <div class="lwind"></div>
+          </div>
+        </div>
+        <div class="windows">
+          <div class="raft"></div>
+          <div class="window" id="window">
+            <div class="rwind"></div>
+            <div class="lwind"></div>
+          </div>
+          <div class="window" id="window">
+            <div class="rwind"></div>
+            <div class="lwind"></div>
+          </div>
+          <div class="window" id="window">
+            <div class="rwind"></div>
+            <div class="lwind"></div>
+          </div>
+          <div class="window" id="window">
+            <div class="rwind"></div>
+            <div class="lwind"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let clickcount = 0;
+
+      let windo = document.querySelectorAll(".window");
+      windo.forEach((element) => {
+        element.addEventListener("click", (e) => {
+          e.target.parentElement.classList.toggle("active");
+        });
+      });
+    </script>
+  </body>
+</html>
